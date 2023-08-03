@@ -18,4 +18,16 @@
   .region-box:hover {
     transform: scale(1.05);
   }
+
+  .home-header {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+  
+  .home-description {
+    text-align: center;
+    font-size: 1.2em;
+    margin-bottom: 40px;
+  }
   

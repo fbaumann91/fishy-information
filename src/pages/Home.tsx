@@ -9,9 +9,10 @@ const Home: React.FC = () => {
 
   return (
     <div>
+      <h1 className="home-header">Welcome to Fishy Information</h1>
+      <p className="home-description">Please select a region below to find out more</p>
+
       <div className="home-container">
-        <h2>Home</h2>
-        <p>Select a region to find out more</p>
         {regions.map((region, index) => {
           const { averageCalories, averageFat } = calculateAverageNutrition(
             region.Fish
