@@ -46,4 +46,18 @@
   .dropdown-content a:hover {background-color: #ddd;}
   
   .dropdown:hover .dropdown-content {display: block;}
+
+  .links-section a:first-child {
+    background-color: #f1f1f1;
+    color: black;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s;
+  }
+  
+  .links-section a:first-child:hover {
+    background-color: #c6c5c5;
+  }
   
