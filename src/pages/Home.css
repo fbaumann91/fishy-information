@@ -1,0 +1,21 @@
+.home-container {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding: 20px;
+  }
+  
+  .region-box {
+    flex: 0 0 auto;
+    width: 200px;
+    margin-right: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .region-box:hover {
+    transform: scale(1.05);
+  }
+  
