@@ -4,13 +4,16 @@ import "./App.css";
 import { BrowserRouter } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import AppRouter from "./components/AppRouter";
+import { RegionProvider } from "./contexts/RegionContext";
 
 function App() {
   return (
-    <BrowserRouter>
-      <NavBar />
-      <AppRouter />
-    </BrowserRouter>
+    <RegionProvider>
+      <BrowserRouter>
+        <NavBar />
+        <AppRouter />
+      </BrowserRouter>
+    </RegionProvider>
   );
 }
 

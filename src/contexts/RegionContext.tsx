@@ -22,7 +22,7 @@ const RegionProvider = ({ children }: RegionProviderProps) => {
 
   const [regions, setRegions] = useState<Region[]>([]);
 
-  const API_URL = "http://localhost:5001/gofish?apikey=abrrad";
+  const API_URL = "http://localhost:5001/gofish?apikey=abrradiology";
 
   const parseRegionData = async (data: Fish[]) => {
     const regionsData: { [key: string]: Region } = {};
