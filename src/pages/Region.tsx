@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { RegionContext } from "../contexts/RegionContext";
 import { calculateAverageNutrition } from "../utils";
@@ -11,6 +11,11 @@ const Region: React.FC = () => {
   const region = regions.find((region) => region.Region === regionName);
 
   const [selectedFish, setSelectedFish] = useState(region?.Fish[0]);
+
+  useEffect(() => {
+    //Set the selected fish to the first fish in the region on region change
+    setSelectedFish(region?.Fish[0]);
+  }, [region]);
 
   if (!region) {
     return <p>Region not found</p>;
