@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
-import { NOAAFisheriesRegion } from "../enums/NOAAFisheriesRegion";
 import './NavBar.css';
+import { RegionContext } from "../contexts/RegionContext";
 
 function NavBar() {
   const [showRegions, setShowRegions] = useState(false);
+  const { regions } = useContext(RegionContext);
 
   const toggleRegions = () => {
     setShowRegions(!showRegions);
@@ -26,10 +27,10 @@ function NavBar() {
           {showRegions && (
             <div className="dropdown-content">
               {
-                //Loop through the NOAAFisheriesRegion enum and add each item to a dropdown
-              Object.values(NOAAFisheriesRegion).map(region => (
-                <Link key={region} to={`/region/${region}`}>{region}</Link>
-              ))}
+                regions.map(region => (
+                  <Link key={region.Region} to={`/region/${region.Region}`}>{region.Region}</Link>
+                ))
+              }
             </div>
           )}
         </div>
