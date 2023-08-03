@@ -7,7 +7,7 @@ function AppRouter() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/region/:id" element={<Region />} />
+      <Route path="/region/:regionName" element={<Region />} />
     </Routes>
   )
 }
