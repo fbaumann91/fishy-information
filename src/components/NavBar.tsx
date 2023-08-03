@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import './NavBar.css';
 import { RegionContext } from "../contexts/RegionContext";
+import logo from '../assets/logo.png';
 
 function NavBar() {
   const [showRegions, setShowRegions] = useState(false);
@@ -11,12 +12,10 @@ function NavBar() {
     setShowRegions(!showRegions);
   }
 
-  // TODO: Update Styles to look a little better
-
   return (
     <nav className="navbar">
       <div className="logo-section">
-        <img src="logo.png" alt="Logo" className="logo" /> {/* TODO: Figure out a logo to use */}
+        <img src={logo} alt="Logo" className="logo" />
       </div>
 
       <div className="links-section">
