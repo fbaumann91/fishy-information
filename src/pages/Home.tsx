@@ -13,6 +13,7 @@ const Home: React.FC = () => {
       <p className="home-description">Please select a region below to find out more</p>
 
       <div className="home-container">
+        {/* Render the regions as a list */}
         {regions.map((region, index) => {
           const { averageCalories, averageFat } = calculateAverageNutrition(
             region.Fish

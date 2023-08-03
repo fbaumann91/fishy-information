@@ -21,6 +21,7 @@ function NavBar() {
       <div className="links-section">
         <Link to="/">Home</Link>
 
+        {/* Render the regions as a dropdown list */}
         <div className="dropdown">
           <button onClick={toggleRegions} className="dropbtn">Regions ⌵</button>
           {showRegions && (

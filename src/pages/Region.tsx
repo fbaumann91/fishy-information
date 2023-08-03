@@ -28,6 +28,7 @@ const Region: React.FC = () => {
       <p>Average Fat: {averageFat.toFixed(2)}g</p>
         <h2 className="fish-list-header">Fish in the Region</h2>
         <div className="fish-list">
+          {/* Render the region fish array as a list */}
         {region.Fish.map((fish) => (
             <div
               key={fish.SpeciesName}
