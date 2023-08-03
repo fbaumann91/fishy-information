@@ -22,7 +22,7 @@ const Home: React.FC = () => {
               <div className="region-box">
                 <h2>{region.Region}</h2>
                 <p>Average Calories: {averageCalories.toFixed(2)}</p>
-                <p>Average Fat: {averageFat.toFixed(2)}</p>
+                <p>Average Fat: {averageFat.toFixed(2)}g</p>
               </div>
             </Link>
           );

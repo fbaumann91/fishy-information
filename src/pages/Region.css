@@ -1,0 +1,24 @@
+.region-container {
+  display: flex;
+}
+
+.fish-list {
+    height: 100vh;
+    overflow-y: auto;
+  }
+
+.fish-list-item {
+  padding: 10px;
+  transition: background-color 0.3s;
+  border: 1px solid #ccc;
+  margin-bottom: 0px;
+  cursor: pointer;
+}
+
+.fish-list-item:hover {
+  background-color: #eaeaea;
+}
+
+.fish-list-header {
+    padding-top: 10px;
+}

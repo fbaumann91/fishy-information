@@ -1,35 +1,45 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { useParams } from "react-router-dom";
 import { RegionContext } from "../contexts/RegionContext";
-import { calculateAverageNutrition, parseDescription } from "../utils";
+import { calculateAverageNutrition } from "../utils";
+import "./Region.css";
+import FishInfo from "../components/FishInfo";
 
 const Region: React.FC = () => {
   const { regions } = useContext(RegionContext);
   const { regionName } = useParams<{ regionName: string }>();
   const region = regions.find((region) => region.Region === regionName);
-  
+
+  const [selectedFish, setSelectedFish] = useState(region?.Fish[0]);
+
   if (!region) {
     return <p>Region not found</p>;
   }
 
-  const { averageCalories, averageFat } = calculateAverageNutrition(region.Fish);
+  const { averageCalories, averageFat } = calculateAverageNutrition(
+    region.Fish
+  );
 
   return (
     <div>
       <h1>{region.Region}</h1>
-      <p>Average Calories: {averageCalories}</p>
-      <p>Average Fat: {averageFat}</p>
-      {region.Fish.map((fish) => (
-        <div key={fish.SpeciesName}>
-          <h2>{fish.SpeciesName}</h2>
-          <img src={fish.SpeciesIllustrationPhoto.src} alt={fish.SpeciesName} />
-          <p>Calories: {fish.Calories}</p>
-          <p>Fat: {fish.FatTotal}</p>
-          {parseDescription(fish.PhysicalDescription).map((desc, index) => (
-            desc && <p key={index}>{desc}</p>
+      <p>Average Calories: {averageCalories.toFixed(2)}</p>
+      <p>Average Fat: {averageFat.toFixed(2)}g</p>
+      <h2 className="fish-list-header">Fish in the region</h2>
+      <div className="region-container">
+        <div className="fish-list">
+          {region.Fish.map((fish) => (
+            <div
+              key={fish.SpeciesName}
+              className="fish-list-item"
+              onClick={() => setSelectedFish(fish)}
+            >
+              {fish.SpeciesName}
+            </div>
           ))}
         </div>
-      ))}
+        {selectedFish && <FishInfo fish={selectedFish} />}
+      </div>
     </div>
   );
 };
