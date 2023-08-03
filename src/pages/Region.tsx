@@ -21,14 +21,14 @@ const Region: React.FC = () => {
   );
 
   return (
-    <div>
+    <div className="region-container">
+      <div className="fish-list-container">
       <h1>{region.Region}</h1>
       <p>Average Calories: {averageCalories.toFixed(2)}</p>
       <p>Average Fat: {averageFat.toFixed(2)}g</p>
-      <h2 className="fish-list-header">Fish in the region</h2>
-      <div className="region-container">
+        <h2 className="fish-list-header">Fish in the Region</h2>
         <div className="fish-list">
-          {region.Fish.map((fish) => (
+        {region.Fish.map((fish) => (
             <div
               key={fish.SpeciesName}
               className="fish-list-item"
@@ -37,7 +37,9 @@ const Region: React.FC = () => {
               {fish.SpeciesName}
             </div>
           ))}
-        </div>
+      </div>
+      </div>
+      <div className="fish-info">
         {selectedFish && <FishInfo fish={selectedFish} />}
       </div>
     </div>

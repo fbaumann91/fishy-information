@@ -1,10 +1,8 @@
-.region-container {
-  display: flex;
-}
-
-.fish-list {
+body {
+    margin: 0;
     height: 100vh;
-    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
   }
 
 .fish-list-item {
@@ -20,5 +18,28 @@
 }
 
 .fish-list-header {
-    padding-top: 10px;
+  padding-top: 10px;
+}
+
+.region-container {
+    display: flex;
+    justify-content: space-between;
+    height: calc(100vh - 70px);
+    overflow: hidden;
+  }
+
+.fish-list {
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.fish-list-container {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.fish-info {
+  width: 50%;
 }
